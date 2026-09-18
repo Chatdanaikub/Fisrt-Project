@@ -6,6 +6,8 @@ import Page3 from './pages/page3';
 import Page4 from './pages/page4';
 import NotFound from './pages/notfound';
 
+import logoImg from './assets/logo.svg';
+
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -18,7 +20,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Link to="/" className="flex items-center gap-2.5 text-2xl font-bold tracking-tight text-indigo-600 hover:text-indigo-700 transition">
-              <img src="/logo.svg" alt="App Logo" className="w-8 h-8 rounded-lg shadow-sm" />
+              <img src={logoImg} alt="App Logo" className="w-8 h-8 rounded-lg shadow-sm" />
               <span>ไม่บอกหลอก</span>
             </Link>
             <span className="hidden sm:inline-block text-xs font-medium text-gray-500 bg-gray-100 border border-gray-200 px-2.5 py-1 rounded-full">
