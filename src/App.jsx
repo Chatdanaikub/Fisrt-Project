@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Routes, Route, NavLink, Link, useLocation } from 'react-router-dom';
 import Home from './pages/home';
+import Week7 from './pages/week7';
 import Page2 from './pages/page2';
 import Page3 from './pages/page3';
 import Page4 from './pages/page4';
@@ -29,7 +30,7 @@ export default function App() {
           </div>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+          <nav className="hidden md:flex items-center space-x-7 text-sm font-medium text-gray-600">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -41,6 +42,21 @@ export default function App() {
               }
             >
               Home
+            </NavLink>
+            <NavLink
+              to="/week7"
+              className={({ isActive }) =>
+                `transition py-1 flex items-center gap-1.5 ${
+                  isActive
+                    ? 'text-blue-600 font-semibold border-b-2 border-blue-600'
+                    : 'hover:text-blue-600'
+                }`
+              }
+            >
+              <span>Week 7 (Storage & DB)</span>
+              <span className="px-1.5 py-0.2 bg-blue-100 text-blue-700 text-[10px] font-bold rounded-full">
+                New
+              </span>
             </NavLink>
             <NavLink
               to="/page2"
@@ -118,6 +134,22 @@ export default function App() {
               Home
             </NavLink>
             <NavLink
+              to="/week7"
+              onClick={() => setMobileMenuOpen(false)}
+              className={({ isActive }) =>
+                `block px-3 py-2 rounded-lg text-base font-medium transition flex items-center justify-between ${
+                  isActive
+                    ? 'bg-blue-50 text-blue-600 font-semibold'
+                    : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                }`
+              }
+            >
+              <span>Week 7 (Storage & DB)</span>
+              <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">
+                New
+              </span>
+            </NavLink>
+            <NavLink
               to="/page2"
               onClick={() => setMobileMenuOpen(false)}
               className={({ isActive }) =>
@@ -164,6 +196,9 @@ export default function App() {
       <main className={`flex-grow flex flex-col justify-center w-full ${isShowcase ? 'p-0 max-w-none' : 'p-4 sm:p-8 max-w-7xl mx-auto'}`}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/week7" element={<Week7 />} />
+          <Route path="/inventory" element={<Week7 />} />
+          <Route path="/storage" element={<Week7 />} />
           <Route path="/page2" element={<Page2 />} />
           <Route path="/page3" element={<Page3 />} />
           <Route path="/page4" element={<Page4 />} />

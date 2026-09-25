@@ -3,6 +3,21 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   const pages = [
     {
+      to: '/week7',
+      tag: 'Week 7 (New!)',
+      title: 'Local Storage & IndexedDB (Dexie)',
+      desc: 'ระบบคลังสินค้า InventoryDatabase ด้วย Dexie.js (IndexedDB) และระบบจัดการงาน myTask บันทึกถาวรด้วย Local Storage ตามสไลด์ Week 7',
+      badge: 'Week 7 Workshop',
+      gradient: 'from-blue-600 to-indigo-700',
+      tagColor: 'bg-blue-50 text-blue-700 border-blue-200',
+      btnColor: 'bg-blue-600 hover:bg-blue-700 text-white',
+      icon: (
+        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+        </svg>
+      ),
+    },
+    {
       to: '/page2',
       tag: 'Page 2',
       title: 'Cyber Strike (3D FPS Combat)',
@@ -57,7 +72,7 @@ export default function Home() {
           Welcome to IG342
         </h2>
         <p className="text-gray-500 text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
-          เว็บแอปพลิเคชัน Single Page Application (SPA) รองรับการสลับหน้าจอด้วย React Router — Workshop 5-1
+          เว็บแอปพลิเคชัน Single Page Application (SPA) รองรับ PWA พร้อมระบบจัดเก็บข้อมูล Local Storage และ IndexedDB
         </p>
 
         <div className="mt-5 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-sm font-medium">
@@ -66,6 +81,16 @@ export default function Home() {
         </div>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <Link
+            to="/week7"
+            className="w-full sm:w-auto bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white px-8 py-3.5 rounded-full font-bold hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg active:scale-95 inline-flex items-center justify-center gap-2.5 border border-white/20"
+          >
+            <span>📦</span>
+            <span>เปิดงาน Week 7: Local Storage & IndexedDB</span>
+            <span className="bg-yellow-400 text-gray-900 text-xs px-2 py-0.5 rounded-full font-extrabold uppercase">
+              5 คะแนน
+            </span>
+          </Link>
           <Link
             to="/page4"
             className="bg-gradient-to-r from-cyan-600 to-indigo-600 text-white px-7 py-3 rounded-full font-semibold hover:from-cyan-700 hover:to-indigo-700 transition-all shadow-md active:scale-95 inline-flex items-center gap-2"
